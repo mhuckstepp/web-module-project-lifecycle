@@ -115,10 +115,15 @@ class App extends React.Component {
         {this.state.user.location ? (
           <span>{this.state.user.location} </span>
         ) : (
-          <h1> Loading </h1>
+          ""
         )}
         {this.state.followers.map((follower) => {
-          return <h1 key={follower.id}>{follower.login}</h1>;
+          return (
+            <div>
+              <h1 key={follower.id}>{follower.login}</h1>
+              <img src={follower.avatar_url} />
+            </div>
+          );
         })}
         <input
           name="userSearch"
